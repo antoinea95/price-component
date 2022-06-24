@@ -19,7 +19,7 @@ div.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-image: url('./images/bg-pattern.svg');
     background-repeat: no-repeat;
     background-color: hsl(230, 100%, 99%);
@@ -41,7 +41,8 @@ p {
 /* header style */
 
 header.header{
-    height: 20vh;
+    height: 30%;
+    width: 80%;
     background-image: url('./images/pattern-circles.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -58,8 +59,9 @@ main.main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
-    height: 60%;
+    width: 80%;
+    max-width: 560px;
+    height: 50%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
@@ -69,7 +71,7 @@ main.main {
 
 form.rangeForm {
     width: 100%;
-    flex-grow: 2;
+    height: 70%;
     border-bottom: 2px solid hsl(230, 100%, 99%);
     display: flex;
     flex-direction: column;
@@ -113,35 +115,49 @@ div.priceBox p {
 
 /* range style */
 
-label.range {
+div.range {
+    display: inline-block;
     position: relative;
+    width: 80%;
+    max-width: 500px;
     height: 10px;
-    width: 500px;
-    background-color: hsl(224, 65%, 95%);
-    border-radius: 5px;
-
 }
+
 input[type="range"] {
     --bgcolor: hsl(174, 86%, 45%);
     --shadowcolor: hsl(174, 77%, 80%);
     -webkit-appearance: none;
     position: absolute;
     top: 0;
-    border: 1px solid white; 
-    width: 500px;
+    border: 1px solid white;
+    width: 100%;
+    max-width: 500px;
     height: 10px;
-    background-color: hsl(224, 65%, 95%);
+    background-color: transparent;
     border-radius: 5px;
   }
 
 /* background slide bar with default value */ 
 
+
 .fillBar {
     position: absolute;
     width: 50%;
     height: 10px;
+    left: 0;
     border-radius: 5px;
+    background-color: var(--bgcolor);
     transition: all 200ms ease-in-out;
+}
+
+.lowerFill {
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    right: 0;
+    border-radius: 5px;
+    background-color: hsl(224, 65%, 95%);
+    pointer-events:none;
 }
 
 .fillMonth{
@@ -153,6 +169,8 @@ input[type="range"] {
 }
 
 /* style thumb */ 
+
+  
 input[type="range"]::-webkit-slider-thumb {
     position: relative;
     z-index: 1;
@@ -175,18 +193,33 @@ input[type="range"]::-webkit-slider-thumb:active {
   }
 
 /* mozilla thumb version */
+
+input[type=range]::-moz-range-track {
+    width: 100% ;
+    height: 10px;
+    cursor: pointer;
+    background: none transparent;
+    border-radius: 5px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    position: relative;
+    left: 0;
+    z-index: -1;
+  
+  }
+
 input[type=range]::-moz-range-thumb {
+    position: relative;
     border: none;
     height: 40px;
     width: 40px;
     border-radius: 50%;
     background-image: url("./images/icon-slider.svg");
-    background-color: hsl(174, 86%, 45%);
+    background-color: var(--bgcolor);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
     cursor: pointer;
-    box-shadow: 0 0 10px 5px hsl(174, 77%, 80%);
+    box-shadow: 0 0 10px 5px var(--shadowcolor);
 }
 
 input[type=range]::-moz-range-thumb:active {
@@ -202,6 +235,7 @@ div.toggleSwitch {
     align-items: center;
     justify-content: center;
     width: 90%;
+    max-width: 500px;
     font-weight: lighter;
     font-size: 13px;
 }
@@ -263,7 +297,7 @@ input:checked + .slider::before {
     position: absolute;
     content: "25% discount";
     font-size: 11px;
-    margin-left: 15px;
+    margin-left: 10px;
     top: 0;
     font-weight: bolder;
     color: hsl(15, 100%, 70%);
@@ -277,15 +311,15 @@ input:checked + .slider::before {
 
 div.information {
     width: 80%;
-    flex-grow: 1;
+    height: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 ul.advantages {
-    flex-grow: 1;
-    height: 70%;
+    height: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -300,13 +334,14 @@ ul.advantages {
 }
 
 .btnTrial {
-    width: 35%;
+    width: 50%;
+    max-width: 160px;
     color: hsl(226, 100%, 87%);
     cursor: pointer;
     font-size: 13px;
     border: none;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 40px;
     background-color:  hsl(227, 35%, 25%);
     transition: all 200ms ease-in-out;
 }
@@ -314,6 +349,104 @@ ul.advantages {
 .btnTrial:hover{
     transform: scale(1.05);
     box-shadow: 0 0 10px 3px  hsl(174, 77%, 80%);
+}
+
+
+/* Tablet screen*/
+
+@media screen and (max-width:768px) {
+
+    .discount::after {
+        content: "-25%";
+    }
+}
+
+/* Mobile screen */
+
+@media screen and (max-width: 600px) {
+    
+    div.container {
+        position: relative;
+        max-width: 540px;
+        font-size: 12px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    header.header p {
+        padding: 10px 70px;
+        font-size: 12px;
+    }
+
+    main.main {
+        height: 70%;
+    }
+    
+    /* modification position of price and range slider */ 
+    form.rangeForm {
+        position: relative;
+        height: 60%;
+    }
+
+    div.headerForm {
+        height: 55%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    div.range {
+        position: absolute;
+        top: 35%;
+
+    }
+
+    /* adjust fontsize */
+    div.priceBox p {
+        font-size: 13px;
+    }
+    
+    #price {
+        font-size: 30px;
+    }
+
+    .viewText {
+        font-size: 12px;
+    }
+
+    .toggleSwitch p {
+        font-size: 12px;
+        margin: 10px;
+    }
+
+    .discount::after {
+        font-size: 9px;
+        margin-left: 3px;
+        padding: 2px 6px;
+        top: 11px;
+    }
+
+    /* ajdust information and btn part */ 
+    div.information {
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 40%;
+    }
+
+    ul.advantages {
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .btnTrial {
+        margin-bottom: 10px;
+    }
+
 }
 
 
