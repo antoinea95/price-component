@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 
 
-/* reset css */
+/* reset  */
 * {
     padding: 0;
     margin: 0;
@@ -38,6 +38,27 @@ p {
     color: hsl(225, 20%, 60%);
 }
 
+/* loading animation */
+
+@keyframes displayMain {
+    0% {
+     transform: scale(4);
+     opacity: 0%;
+ }
+ 
+     50% {
+         opacity: 0%;
+     }
+     75%, 100%{
+     transform: scale(1);
+     opacity: 100%;
+ }
+ 
+     80% {
+         transform: scale(1.05);
+     }
+ }
+
 /* header style */
 
 header.header{
@@ -50,10 +71,10 @@ header.header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: 800ms ease-in-out displayMain;
 }
 
 /* main box */
-
 main.main {
     display: flex;
     flex-direction: column;
@@ -65,6 +86,7 @@ main.main {
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    animation: 800ms ease-in-out displayMain;
 }
 
 /* form style */
@@ -137,8 +159,7 @@ input[type="range"] {
     border-radius: 5px;
   }
 
-/* background slide bar with default value */ 
-
+/* background slide bar */ 
 
 .fillBar {
     position: absolute;
@@ -170,7 +191,6 @@ input[type="range"] {
 
 /* style thumb */ 
 
-  
 input[type="range"]::-webkit-slider-thumb {
     position: relative;
     z-index: 1;
@@ -192,7 +212,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     background-color: #23ADA1;
   }
 
-/* mozilla thumb version */
+/* mozilla thumb  & track version */
 
 input[type=range]::-moz-range-track {
     width: 100% ;
@@ -307,7 +327,7 @@ input:checked + .slider::before {
 }
 
 
-
+/* informations part */ 
 
 div.information {
     width: 80%;
@@ -362,7 +382,6 @@ ul.advantages {
 }
 
 /* Mobile screen */
-
 @media screen and (max-width: 600px) {
     
     div.container {

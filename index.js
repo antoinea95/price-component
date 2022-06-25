@@ -1,4 +1,4 @@
-// prix par défaut 
+// affichage du prix par défaut
 let valuePrice = document.getElementById('price');
 let priceFrequence = document.querySelector ('.priceBox p');
 let price = 16;
@@ -6,7 +6,7 @@ valuePrice.textContent = `\$ ${price}.00`;
 priceFrequence.textContent = '/ month';
 
 
-// change la couleur de la slidebar selon le toggle switch
+// change la couleur et le prix lorsque l'utilisateur passe au paiment par année
 function changeYear() {
 
 let toggleSwitch = document.querySelector('input[type=checkbox]');
@@ -19,6 +19,7 @@ toggleSwitch.addEventListener('click', () => {
 
 changeYear();
 
+// change la couleur du slider lorsque l'utilisateur passe au mode année
 function changeColor() {
     let rangeBar = document.querySelector('input[type=range]');
     let toggleSwitch = document.querySelector('input[type=checkbox]');
@@ -39,7 +40,7 @@ function changeColor() {
 }
 
 // modification des données en fonction de la valeur du slider
-function changeView() {
+function changeRangeValue() {
     let rangeBar = document.querySelector('input[type=range]');
 
     rangeBar.addEventListener('input', (e) => {
@@ -51,7 +52,7 @@ function changeView() {
     })
 }
 
-changeView();
+changeRangeValue();
 
 
 // changement des données du formulaire en fonction de la valeur selectionnée par l'utilisateur sur la slide bar
