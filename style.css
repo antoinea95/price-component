@@ -9,10 +9,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 
 div.container {
     font-family: 'Manrope', sans-serif;
-    font-size: 15px;
+    font-size: 1.5rem;
     max-width: 1440px;
     margin: 0 auto;
     height: 100vh;
@@ -28,7 +32,7 @@ div.container {
 
 h1 {
     font-weight: bolder;
-    font-size: 28px;
+    font-size: 2.8rem;
     margin: 1vh;
     color: hsl(227, 35%, 25%);
 }
@@ -80,9 +84,9 @@ main.main {
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    max-width: 560px;
+    max-width: 56rem;
     height: 50%;
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: white;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     animation: 800ms ease-in-out displayMain;
@@ -115,7 +119,7 @@ div.dataBox {
 
 /* pageviews style */
 .viewText {
-    letter-spacing: 2px;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
     font-weight: bolder;
     color: hsl(225, 20%, 60%);
@@ -124,12 +128,12 @@ div.dataBox {
 /* price style */
 
 div.priceBox p {
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 #price {
-    font-size: 40px;
-    padding-right: 10px;
+    font-size: 4rem;
+    padding-right: 1rem;
     font-weight: bolder;
     color: hsl(227, 35%, 25%);
 }
@@ -140,8 +144,8 @@ div.range {
     display: inline-block;
     position: relative;
     width: 80%;
-    max-width: 500px;
-    height: 10px;
+    max-width: 50rem;
+    height: 1rem;
 }
 
 input[type="range"] {
@@ -152,8 +156,8 @@ input[type="range"] {
     top: 0;
     border: 1px solid white;
     width: 100%;
-    max-width: 500px;
-    height: 10px;
+    max-width: 50rem;
+    height: 1rem;
     background-color: transparent;
     border-radius: 5px;
   }
@@ -163,7 +167,7 @@ input[type="range"] {
 .fillBar {
     position: absolute;
     width: 50%;
-    height: 10px;
+    height: 1rem;
     left: 0;
     border-radius: 5px;
     background-color: var(--bgcolor);
@@ -172,7 +176,7 @@ input[type="range"] {
 
 .lowerFill {
     position: absolute;
-    height: 10px;
+    height: 1rem;
     width: 100%;
     right: 0;
     border-radius: 5px;
@@ -194,8 +198,8 @@ input[type="range"]::-webkit-slider-thumb {
     position: relative;
     z-index: 1;
     -webkit-appearance: none;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     background-image: url("./images/icon-slider.svg");
     background-color: var(--bgcolor);
@@ -215,11 +219,11 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 input[type=range]::-moz-range-track {
     width: 100% ;
-    height: 10px;
+    height: 1rem;
     cursor: pointer;
     background: none transparent;
     border-radius: 5px;
-    border: 0px solid rgba(0, 0, 0, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
     position: relative;
     left: 0;
     z-index: -1;
@@ -229,8 +233,8 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
     position: relative;
     border: none;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     background-image: url("./images/icon-slider.svg");
     background-color: var(--bgcolor);
@@ -254,21 +258,21 @@ div.toggleSwitch {
     align-items: center;
     justify-content: center;
     width: 90%;
-    max-width: 500px;
+    max-width: 50rem;
     font-weight: lighter;
-    font-size: 13px;
+    font-size: 1.3rem;
 }
 
 .toggleSwitch p {
-    margin: 0 20px ;
+    margin: 0 2rem ;
 }
 
 .switch {
     position: relative;
-    width: 40px;
-    height: 20px;
+    width: 4rem;
+    height: 2rem;
     background-color:  hsl(174, 86%, 45%);
-    border-radius: 50px;
+    border-radius: 5rem;
 }
 
 .switch input {
@@ -285,7 +289,7 @@ div.toggleSwitch {
     bottom: 0;
     right: 0;
     background-color: transparent;
-    border-radius: 50px;
+    border-radius: 5rem;
     transition: 400ms ease-out;
 }
 
@@ -294,8 +298,8 @@ div.toggleSwitch {
     top: 3.5px;
     left: 3.5px;
     content: "";
-    width: 13px;
-    height: 13px;
+    width: 1.3rem;
+    height: 1.3rem;
     border-radius: 50%;
     background-color: white;
     transition: 400ms ease-out;
@@ -315,14 +319,14 @@ input:checked + .slider::before {
 .discount::after {
     position: absolute;
     content: "25% discount";
-    font-size: 11px;
-    margin-left: 10px;
+    font-size: 1.1rem;
+    margin-left: 1rem;
     top: 0;
     font-weight: bolder;
     color: hsl(15, 100%, 70%);
     background-color: hsl(14, 92%, 95%);
     padding: 3px 8px;
-    border-radius: 20px;
+    border-radius: 2rem;
 }
 
 
@@ -343,7 +347,7 @@ ul.advantages {
     flex-direction: column;
     justify-content: space-evenly;
     list-style-type: none;
-    font-size: 13px;
+    font-size: 1.3rem;
     color: hsl(225, 20%, 60%);
 }
 
@@ -354,13 +358,13 @@ ul.advantages {
 
 .btnTrial {
     width: 50%;
-    max-width: 160px;
+    max-width: 16rem;
     color: hsl(226, 100%, 87%);
     cursor: pointer;
-    font-size: 13px;
+    font-size: 1.3rem;
     border: none;
-    padding: 10px;
-    border-radius: 40px;
+    padding: 1rem;
+    border-radius: 4rem;
     background-color:  hsl(227, 35%, 25%);
     transition: all 200ms ease-in-out;
 }
@@ -373,34 +377,30 @@ ul.advantages {
 
 /* Tablet screen*/
 
-@media screen and (max-width:768px) {
-
+@media  screen and (max-width:768px) {
     .discount::after {
         content: "-25%";
     }
 }
 
-/* Mobile screen */
-@media screen and (max-width: 600px) {
+@media screen and (max-width:600px) {
+
+    html {
+        font-size: 58%;
+    }
     
     div.container {
         position: relative;
         max-width: 540px;
-        font-size: 12px;
-        margin: 10px auto;
     }
 
     h1 {
-        font-size: 20px;
-    }
-
-    header.header p {
-        padding: 10px 70px;
-        font-size: 12px;
+        font-size: 2.1rem;
     }
 
     main.main {
         height: 70%;
+        margin-bottom: 10%;
     }
     
     /* modification position of price and range slider */ 
@@ -412,7 +412,6 @@ ul.advantages {
     div.headerForm {
         height: 55%;
         flex-direction: column;
-        margin-top: 10px;
     }
 
     div.range {
@@ -421,29 +420,13 @@ ul.advantages {
 
     }
 
-    /* adjust fontsize */
-    div.priceBox p {
-        font-size: 13px;
-    }
-    
-    #price {
-        font-size: 30px;
-    }
-
-    .viewText {
-        font-size: 12px;
-    }
-
     .toggleSwitch p {
-        font-size: 12px;
-        margin: 10px;
+        margin: 0 1rem;
     }
 
     .discount::after {
-        font-size: 9px;
-        margin-left: 3px;
-        padding: 2px 6px;
-        top: 11px;
+        padding: 3px 6px;
+        margin-left: 0.3rem;
     }
 
     /* ajdust information and btn part */ 
@@ -458,11 +441,10 @@ ul.advantages {
         width: 100%;
         height: 50%;
         text-align: center;
-        font-size: 12px;
     }
 
     .btnTrial {
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
 }
